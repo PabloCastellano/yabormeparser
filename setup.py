@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from setuptools import setup
-import pypandoc
 import yabormeparser
 
+long_description = ""
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except:
+    long_description = open('README.md').read()
 
-long_description = pypandoc.convert('README.md', 'rst')
 version = yabormeparser.__version__
 
 setup(
@@ -18,7 +22,7 @@ setup(
     install_requires=['pdfminer==20140328',
                       'ply==3.4'],
     # metadata for upload to PyPI
-    author="Daniel A Dorado",
+    author="Daniel A. Dorado",
     author_email="daniel@funeslab.com",
     description=("A parser than transform PDF "
                  "BORME files into a BORME JSON files."),
@@ -32,7 +36,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Natural Language :: Spanish',
-        'Operating System :: OS Independent'
+        'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Text Processing'
 
