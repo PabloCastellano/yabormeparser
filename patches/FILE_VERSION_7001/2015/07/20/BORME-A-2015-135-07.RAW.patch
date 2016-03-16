@@ -1,0 +1,19 @@
+{
+    "296905": {
+        "annoucements": [
+            {
+                "label": "Sociedad unipersonal",
+                "value": "Sociedad unipersonal. Cambio de identidad del socio único: MERCHANT INDUSTRIAL COMMERCIAL M.I.C. & CO S.A."
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 292, L 291, F 185, S 8, H IB 13088, I/A 2 ( 8.07.15)."
+            }
+        ],
+        "branch": "",
+        "code": "296905",
+        "company": "BELLA SQUADRA, S.L.",
+        "error": "UNKNOWN LABEL: T 292, L 291, F 185, S 8, H IB 13088, I/A 3 ( 8.07.15). ",
+        "register": "R.M. EIVISSA"
+    }
+}

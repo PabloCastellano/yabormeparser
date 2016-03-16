@@ -1,0 +1,27 @@
+{
+    "17308": {
+        "annoucements": [
+            {
+                "label": "Constitución",
+                "value": "Comienzo de operaciones: 23.12.10. Objeto social: La organización, gestión e intermediación de un servicio de taxi y radio-taxi para dar cobertura a la petición de servicio de taxi por parte de usuarios y su prestación por parte de los taxistas, ya sea para transporte de personas y/o mercancías. La mediación de contratación de servicio de taxi con. Domicilio: AVDA ALCALDE LORENZO CARBONELL 35 BIS - LOCAL 1 (ALICANTE). Capital: 30.000,00 Euros."
+            },
+            {
+                "label": "Declaración de unipersonalidad",
+                "value": "Socio único: ASOCIACION LOCAL DE EMPRESARIOS AUTONOMOS DE AUTO-"
+            },
+            {
+                "label": "Nombramientos",
+                "value": "Adm. Mancom.: APARICIO BELLIDO LEOPOLDO;MAS ANTON JOSE RAFAEL;BALLESTER ROS MIGUEL ALBERTO."
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 3499 , F 17, S 8, H A 123845, I/A 1 ( 7.01.11)."
+            }
+        ],
+        "branch": "",
+        "code": "17308",
+        "company": "UNION DE TAXISTAS DEL AREA DE ALICANTE SL.",
+        "error": "UNKNOWN LABEL: Adm. Mancom.: APARICIO BELLIDO LEOPOLDO;MAS ANTON JOSE RAFAEL;BALLESTER ROS MIGUEL ALBERTO. ",
+        "register": ""
+    }
+}

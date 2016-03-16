@@ -1,0 +1,27 @@
+{
+    "27958": {
+        "annoucements": [
+            {
+                "label": "Declaración de unipersonalidad",
+                "value": "LOPEZ SEGURA ANTONIO."
+            },
+            {
+                "label": "Articulo 378.5 del Reglamento del Registro Mercantil",
+                "value": "Justificacion de no aprobacion de cuentas del ejercicio 2008 mediante certificacion del organo de administracion"
+            },
+            {
+                "label": "Articulo 378.5 del Reglamento del Registro Mercantil",
+                "value": "Justificacion de no aprobacion de cuentas del ejercicio 2009 mediante certificacion del organo de administracion"
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 763 , F 65, S 8, H GR 11525, I/A 2 (14.01.10)."
+            }
+        ],
+        "branch": "",
+        "code": "27958",
+        "company": "ROJAS SEGURA SOCIEDAD LIMITADA.",
+        "error": "UNKNOWN LABEL: Justificacion de no aprobacion de cuentas del ejercicio 2008 mediante certificacion del organo de administracion. ",
+        "register": ""
+    }
+}

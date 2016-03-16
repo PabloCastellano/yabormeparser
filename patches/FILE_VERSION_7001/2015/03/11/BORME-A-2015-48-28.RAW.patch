@@ -1,0 +1,19 @@
+{
+    "105774": {
+        "annoucements": [
+            {
+                "label": "Sociedad unipersonal",
+                "value": "Cambio de identidad del socio único: BONDUELLE EUROPE LONG LIFE SAS -BELL-"
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 27074 , F 224, S 8, H M 487873, I/A 20 ( 3.03.15)."
+            }
+        ],
+        "branch": "",
+        "code": "105774",
+        "company": "BONDUELLE IBERICA SOCIEDAD ANONIMA.",
+        "error": "UNKNOWN LABEL: T 27074 , F 224, S 8, H M 487873, I/A 20 ( 3.03.15). ",
+        "register": ""
+    }
+}

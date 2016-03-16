@@ -1,0 +1,14 @@
+[
+    {
+        "code": "356774",
+        "error": "Scanning error. Illegal character ':'",
+        "label": "Ceses/Dimisiones",
+        "value": "Adm. Solid.: CANALES CERDA DAVID;FUNDACION QUORUM. LiquiSoli: CANALES CERDA DAVID;FUNDACION QUORUM."
+    },
+    {
+        "code": "356774",
+        "error": "Scanning error. Illegal character ':'",
+        "label": "Nombramientos",
+        "value": "LiquiSoli: CANALES CERDA DAVID;FUNDACION QUORUM."
+    }
+]

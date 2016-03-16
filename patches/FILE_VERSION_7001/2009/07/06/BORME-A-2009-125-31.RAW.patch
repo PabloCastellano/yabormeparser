@@ -1,0 +1,19 @@
+{
+    "303345": {
+        "annoucements": [
+            {
+                "label": "Declaración de unipersonalidad",
+                "value": "Socio único: LONGOFIN SOCIEDAD COMANDITARIA POR ACCIONES DE GIUSEPPE LONGO & C."
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 1435 , F 165, S 8, H NA028523, I/A00004 (25.06.09)."
+            }
+        ],
+        "branch": "",
+        "code": "303345",
+        "company": "ASSUT EUROPE IBERICA SL.",
+        "error": "UNKNOWN LABEL: T 1435 , F 165, S 8, H NA028523, I/A00004 (25.06.09). ",
+        "register": ""
+    }
+}

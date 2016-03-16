@@ -1,0 +1,19 @@
+{
+    "295257": {
+        "annoucements": [
+            {
+                "label": "Sociedad unipersonal",
+                "value": "Cambio de identidad del socio único: GRUPO CORPORATIVO EMPRESARIAL DE LA CAJA DE AHORROS Y MONTE DE PI."
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 1070 , F 218, S 8, H NA002456, I/A00072 (19.06.09)."
+            }
+        ],
+        "branch": "",
+        "code": "295257",
+        "company": "BODEGA DE SARRIA SA.",
+        "error": "UNKNOWN LABEL: T 1070 , F 218, S 8, H NA002456, I/A00072 (19.06.09). ",
+        "register": ""
+    }
+}

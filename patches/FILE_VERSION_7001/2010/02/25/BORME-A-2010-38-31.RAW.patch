@@ -1,0 +1,19 @@
+{
+    "81307": {
+        "annoucements": [
+            {
+                "label": "Sociedad unipersonal",
+                "value": "Cambio de identidad del socio único: ASOCIACION DE TRANSPORTISTAS DISCRECIONALES DE MERCANCIAS Y VIAJE."
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 1493 , F 208, S 8, H NA029682, I/A00002 (16.02.10)."
+            }
+        ],
+        "branch": "",
+        "code": "81307",
+        "company": "TRADISNA ENERGIAS SL.",
+        "error": "UNKNOWN LABEL: T 1493 , F 208, S 8, H NA029682, I/A00002 (16.02.10). ",
+        "register": ""
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "516794": {
+        "annoucements": [
+            {
+                "label": "Declaración de unipersonalidad",
+                "value": "Socio único: RODRIGUEZ RAMIREZ MANUEL -"
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 1483 , F 111, S 8, H GC 23342, I/A 7 (30.11.09)."
+            }
+        ],
+        "branch": "",
+        "code": "516794",
+        "company": "EURODOORS M A SL",
+        "error": "UNKNOWN LABEL: T 1483 , F 111, S 8, H GC 23342, I/A 7 (30.11.09). ",
+        "register": "R.M. LAS PALMAS"
+    }
+}

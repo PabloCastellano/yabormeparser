@@ -1,0 +1,27 @@
+{
+    "429018": {
+        "annoucements": [
+            {
+                "label": "Constitución",
+                "value": "Comienzo de operaciones: 30.09.09. Objeto social: La Sociedad tiene por objeto: a.- La producción, transformación, industrialización, comercialización, importación y exportación de vinos, licores, alcoholes, vinagres, espumosos, bebidas refrescantes y cualesquiera otros productos similares. b. La producción, transformación, industrialización, comercialización, importación, exportación de cualesquiera productos agrícolas,. Domicilio: AVENIDA CARLOS III, no 8,PAMPLONA (PAMPLONA). Capital: 3.010,00 Euros."
+            },
+            {
+                "label": "Declaración de unipersonalidad",
+                "value": "Socio único: GRUPO CORPORATIVO EMPRESARIAL DE LA CAJA DE AHORROS Y MONTE DE PI."
+            },
+            {
+                "label": "Nombramientos",
+                "value": "Admin.Unico: GRUPO CORPORATIVO EMPRESARIAL DE LA CAJA DE AHORRO."
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 1480 , F 111, S 8, H NA029420, I/A00001 ( 2.10.09)."
+            }
+        ],
+        "branch": "",
+        "code": "429018",
+        "company": "INVERSIONES VITIVINICOLAS SL.",
+        "error": "UNKNOWN LABEL: Admin.Unico: GRUPO CORPORATIVO EMPRESARIAL DE LA CAJA DE AHORRO. ",
+        "register": ""
+    }
+}

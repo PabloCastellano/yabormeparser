@@ -1,0 +1,31 @@
+{
+    "112950": {
+        "annoucements": [
+            {
+                "label": "Constitución",
+                "value": "Comienzo de operaciones: 28.01.10. Objeto social: Reunir, conservar, enriquecer y difundir el patrimonio de arte cofrade y sacro. Organizar y exhibir en exposición permanente e itinerante, piezas de orfebrería, talla, tejidos bordados, pinturas y en general todo lo relacionado con el arte cofrade y sacro.- Domicilio: C/ SAN MARCOS 3 (ECIJA). Capital: 3.050,00 Euros."
+            },
+            {
+                "label": "Declaración de unipersonalidad",
+                "value": "Socio único: HERMANDAD DE SAN GIL DE ECIJA -SEVILLA-"
+            },
+            {
+                "label": "Nombramientos",
+                "value": "Adm. Unico: VALSECA MONTAÑO JOSE MARIA."
+            },
+            {
+                "label": "Otros conceptos",
+                "value": "El nombre completo del socio único es REAL ARCHICOFRADIA DENAZARENOS DE LA CORONACION DE ESPINAS DE NUESTRO SEÑOR JESUCRISTO, SAN MARCOS, SAN ROQUE, SANTISIMO CRISTO DE LA SALUD Y NUESTRA SEÑORA DE LOS DOLORES de Ecija.-"
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 5205 , F 42, S 8, H SE 85450, I/A 1 ( 5.03.10)."
+            }
+        ],
+        "branch": "",
+        "code": "112950",
+        "company": "MUSEO HERMANDAD DE SAN GIL SL.",
+        "error": "UNKNOWN LABEL: Adm. Unico: VALSECA MONTA\u00d1O JOSE MARIA. ",
+        "register": ""
+    }
+}

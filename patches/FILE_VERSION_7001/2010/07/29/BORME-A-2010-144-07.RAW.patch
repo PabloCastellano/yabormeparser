@@ -1,0 +1,19 @@
+{
+    "297361": {
+        "annoucements": [
+            {
+                "label": "Declaración de unipersonalidad.",
+                "value": "Socio único: STO AKTIENGESELLSCHAFT -STO SA-"
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 1967 , F 91, S 8, H PM 43243, I/A 7 (15.07.10)."
+            }
+        ],
+        "branch": "",
+        "code": "297361",
+        "company": "PRODUCTOS STO BALEAR SL",
+        "error": "UNKNOWN LABEL: T 1967 , F 91, S 8, H PM 43243, I/A 7 (15.07.10). ",
+        "register": "R.M. PALMA DE MALLORCA"
+    }
+}

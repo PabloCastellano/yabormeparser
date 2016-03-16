@@ -1,0 +1,31 @@
+{
+    "233796": {
+        "annoucements": [
+            {
+                "label": "Revocaciones",
+                "value": "ADM.UNICO: MORENO AMATRIAIN IGNACIO MANUEL."
+            },
+            {
+                "label": "Nombramientos",
+                "value": "ADM.UNICO: VALLADARES CURBELO ROMAN."
+            },
+            {
+                "label": "Otros conceptos",
+                "value": "SOCIEDAD UNIPERSONAL. SOCIO UNICO: ROMAN VALLADARES CURBELO."
+            },
+            {
+                "label": "Cambio de objeto social",
+                "value": "ARTICIPAR,SOLICITAR,PRESENTAR,PROMOVER,PARTICIPAR,DISEÑAR,GESTIONAR,ADMINISTRAR,CEDER,TRANSMITIR,ADJUDICARSE Y/O EXPLOTAR EN NOMBRE PROPIO Y/O EN REPRESENTACION DE TERCEROS,EN CONCURSOS,LICITACIONES,SUBASTAS PUBLICAS,..."
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 44247 , F 35, S 8, H B 450833, I/A 2 (21.05.14)."
+            }
+        ],
+        "branch": "",
+        "code": "233796",
+        "company": "KRUSMAN PROJECT SL.",
+        "error": "UNKNOWN LABEL: Cambio de  social. ",
+        "register": ""
+    }
+}

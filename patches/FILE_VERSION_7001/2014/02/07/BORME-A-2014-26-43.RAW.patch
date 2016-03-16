@@ -1,0 +1,19 @@
+{
+    "59577": {
+        "annoucements": [
+            {
+                "label": "Declaración de unipersonalidad",
+                "value": "Socio único: BOSCH SABATE JOSEFA -PEPITA-"
+            },
+            {
+                "label": "Datos registrales",
+                "value": "T 1149 , F 27, S 8, H T 11886, I/A 8 (27.01.14)."
+            }
+        ],
+        "branch": "",
+        "code": "59577",
+        "company": "FESA TASACIONES SOCIEDAD LIMITADA.",
+        "error": "UNKNOWN LABEL: T 1149 , F 27, S 8, H T 11886, I/A 8 (27.01.14). ",
+        "register": ""
+    }
+}
