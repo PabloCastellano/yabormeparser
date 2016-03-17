@@ -3,12 +3,21 @@
 from setuptools import setup
 import yabormeparser
 
-long_description = ""
-try:
-    import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst')
-except:
-    long_description = open('README.md').read()
+long_description = """
+Yet another BORME Parser.
+
+BORME (Boletin Oficial del Registro Mercantil) is the Official Bulletin of the
+Commercial Registry.
+
+* [BORME documents](https://boe.es/diario_borme/)
+
+This program translate BORME PDF files to JSON.
+
+Borme has two Parsers to extract the PDF file data to a json file.
+
+1. Parser: Read PDF files and write raw json files.
+2. Parser2: Read raw json files and write process json files.
+"""
 
 version = yabormeparser.__version__
 
