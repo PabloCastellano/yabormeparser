@@ -28,7 +28,7 @@ YaBORMEParser requires the following to run:
 
 * Python 2.7+
 * pdfminer 20140328+
-* ply 3.4+
+* ply 3.8+
 
 To build the PIP package it is required:
 
