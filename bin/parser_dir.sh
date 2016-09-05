@@ -4,7 +4,7 @@ DIRECTORY=$1
 aux=`mktemp`
 for pdf in `find $1 -name "*.pdf"`;
 do
-    base=`echo $pdf| sed 's/pdf//'`
+    base=`echo $pdf| sed 's/pdf$//'`
     patch=$base"RAW.patch"
     script="python -m yabormeparser.parser -i "$pdf
     if [ -f $patch ];

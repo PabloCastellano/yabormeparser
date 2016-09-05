@@ -4,7 +4,7 @@ DIRECTORY=$1
 aux=`mktemp`
 for json in `find $1 -name "*.RAW.json"`;
 do
-    base=`echo $json| sed 's/RAW.json//'`
+    base=`echo $json| sed 's/RAW.json$//'`
     patch=$base"patch"
     script="python -m yabormeparser.parser2 -i "$json
     if [ -f $patch ];
