@@ -29,7 +29,7 @@ setup(
         'console_scripts': ['yabormeparser1 = yabormeparser.parser:main',
                             'yabormeparser2 = yabormeparser.parser2:main']},
     install_requires=['pdfminer==20140328',
-                      'ply==3.8'],
+                      'ply==3.9'],
     # metadata for upload to PyPI
     author="Daniel A. Dorado",
     author_email="daniel@funeslab.com",
