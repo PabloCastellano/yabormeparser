@@ -39,10 +39,11 @@ class ExceptionLayout(Exception):
 class Parser(object):
     """Parser for a BORME file an generate a Document with the info."""
 
-    def __init__(self, borme_file=None, patch_file=None):
+    def __init__(self, borme_file=None, patch_file=None, output_dir=None):
         self._log = logging.getLogger(__name__)
         self._following_incomplete_acts = 0
         self._borme_file = borme_file
+        self._output_dir = output_dir
         self.error_acts = []
         self.patched_acts = {}
         if patch_file:
@@ -60,6 +61,8 @@ class Parser(object):
                 u'pages': self._parse_pages(doc)
             }
             self._assert_metadata(info)
+            if not output_dir:
+                self._output_dir = os.path.dirname(borme_file)
             if not self.error_acts:
                 self._assert_toc_equal_doc()
 
@@ -424,8 +427,10 @@ class Parser(object):
         assert toc_codes == doc_codes
 
     def write_result(self):
-        parts = self._borme_file.split(".")[:-1]
+        basename = os.path.basename(self._borme_file)
+        parts = basename.split(".")[:-1]
         base = ".".join(parts)
+        base = os.path.join(self._output_dir, base)
         result = ""
         if self.error_acts:
             patch_file = self._get_file(base + ".RAW.patch.TMP")
@@ -449,14 +454,16 @@ class Parser(object):
 def main():
     parser = optparse.OptionParser()
     parser.add_option('-i', '--inputfile', help='Input file')
+    parser.add_option('-o', '--outputdir', help='Output directory')
     parser.add_option('-p', '--patch', help='Patch file')
     loggingopt.optparse_logging(parser)
     (options, args) = parser.parse_args()
     if not options.inputfile:
         parser.error('Input file not given.')
     pdf_file = options.inputfile
+    output_dir = options.outputdir
     patch_file = options.patch
-    parser = Parser(borme_file=pdf_file, patch_file=patch_file)
+    parser = Parser(borme_file=pdf_file, patch_file=patch_file, output_dir=output_dir)
     result = parser.write_result()
     print "Saved in %s" % result
 

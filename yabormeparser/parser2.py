@@ -24,9 +24,10 @@ class ExceptionVersion(Exception):
 
 class Parser2(object):
 
-    def __init__(self, raw_file, patch_file=None):
+    def __init__(self, raw_file, patch_file=None, output_dir=None):
         self._log = logging.getLogger(__name__)
         self.raw_file = raw_file
+        self.output_dir = output_dir or os.path.dirname(raw_file)
         self.doc = None
         self.error_annoucements = []
 
@@ -44,7 +45,9 @@ class Parser2(object):
         self.document = doc
 
     def write_result(self):
-        base = self.raw_file[:-len(".RAW.json")]
+        basename = os.path.basename(self.raw_file)
+        base = basename[:-len(".RAW.json")]
+        base = os.path.join(self.output_dir, base)
         result = ""
         if self.error_annoucements:
             patch_file = self._get_file(base + ".patch.TMP")
@@ -149,14 +152,16 @@ class Parser2(object):
 def main():
     parser_o = optparse.OptionParser()
     parser_o.add_option('-i', '--inputfile', help='Input file')
+    parser_o.add_option('-o', '--outputdir', help='Output directory')
     parser_o.add_option('-p', '--patch', help='Patch file')
     loggingopt.optparse_logging(parser_o)
     (options, args) = parser_o.parse_args()
     if not options.inputfile:
         parser_o.error('Input file not given.')
     json_raw_file = options.inputfile
+    output_dir = options.outputdir
     patch_file = options.patch
-    parser2 = Parser2(raw_file=json_raw_file, patch_file=patch_file)
+    parser2 = Parser2(raw_file=json_raw_file, patch_file=patch_file, output_dir=output_dir)
     result = parser2.write_result()
     print "Saved in %s" % result
 
