@@ -435,7 +435,7 @@ class Parser(object):
         if self.error_acts:
             patch_file = self._get_file(base + ".RAW.patch.TMP")
             self.save_skeleton(patch_file)
-            result = base + patch_file.name
+            result = patch_file.name
         else:
             json_file = self._get_file(base + ".RAW.json")
             self.save_result(json_file)
