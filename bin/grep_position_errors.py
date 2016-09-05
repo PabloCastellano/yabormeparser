@@ -27,7 +27,7 @@ def get_unknown_positions(file_):
     errors = json.load(open(file_))
     unknown = []
     for e in errors:
-        if e['label'] == "Nombramientos" or  e['label'] == "Ceses/Dimisiones":
+        if e['label'] == "Nombramientos" or e['label'] == "Ceses/Dimisiones":
             unknown += nombramientos(e['value'])
     return set(unknown)
 
