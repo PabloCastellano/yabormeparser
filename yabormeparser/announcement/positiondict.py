@@ -305,6 +305,7 @@ new_positions = [
     u"S.N.C.C.D.I.",
     u"S.NO CONS.GO",
     u"S.NO.C.CO.EJ",
+    u"SC.COMS.NOMB",
     u"SCR. C. AUD.",
     u"SCR.COM.CONT",
     u"SCR.COM.EJEC",
