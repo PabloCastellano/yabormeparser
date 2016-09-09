@@ -55,6 +55,7 @@ class Parser(object):
                 u'raw_version': RAW_FILE_VERSION,
                 u'title': u(info['Title']),
                 u'subject': u(info['Subject']),
+                u'keywords': u(info['Keywords']),
                 u'creation_date': u(info['CreationDate']),
                 u'mod_date': u(info['ModDate']),
                 u'toc': self._get_toc(doc),
