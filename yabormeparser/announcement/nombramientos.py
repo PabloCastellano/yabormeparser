@@ -68,7 +68,8 @@ class Lexer(object):
         while True:
             try:
                 tok = self.lexer.token()
-            except ply.lex.LexError:
+            except ply.lex.LexError, e:
+                self._log.debug(e)
                 msg = "ERROR: %s" % "".join(text)
                 raise common.ParserException(msg)
             if not tok:

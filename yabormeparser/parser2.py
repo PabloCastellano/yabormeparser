@@ -120,7 +120,7 @@ class Parser2(object):
                             "error": unicode(e),
                             "code": ac["code"]
                         }
-                        self._log.error("Annoucement parser. " + str(error))
+                        self._log.error(self.raw_file + ": Annoucement parser in " + ' - ' + str(error))
                         self.error_announcements.append(error)
         return doc
 
