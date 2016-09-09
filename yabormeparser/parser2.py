@@ -4,7 +4,9 @@ import json
 import optparse
 import os.path
 import parser
+import re
 import logging
+import datetime
 from . import loggingopt
 from . import announcement
 
@@ -42,6 +44,7 @@ class Parser2(object):
         doc = self._announcements(doc)
         doc = self._date(doc)
         doc = self._delete_toc(doc)
+        doc = self._other_changes(doc)
         self.document = doc
 
     def write_result(self):
@@ -136,10 +139,31 @@ class Parser2(object):
         ModDate:        Wed Dec 11 14:47:32 2013"""
         doc['creation_date'] = self._process_date(doc['creation_date'])
         doc['mod_date'] = self._process_date(doc['mod_date'])
+
         return doc
 
     def _delete_toc(self, doc):
         doc.pop('toc')
+        return doc
+
+    def _other_changes(self, doc):
+        doc.pop('title')
+        doc['cve'] = doc['subject']
+
+        cve, numero_text, provincia, pub_date = doc['keywords'].split(';')
+
+        assert cve == doc['cve']
+        doc['num'] = int(re.match(u'^BORME (\d+) de \d+', numero_text, re.UNICODE).group(1))
+        doc['provincia'] = provincia
+        doc['seccion'] = "TODO"
+
+        try:
+            doc['publish_date'] = datetime.datetime.strptime(pub_date, '%d/%m/%Y').date().isoformat()
+        except ValueError:
+            doc['publish_date'] = '0000-00-00'
+
+        del doc['keywords']
+        del doc['subject']
         return doc
 
     def _process_date(self, text):
