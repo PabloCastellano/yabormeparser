@@ -47,7 +47,7 @@ class Lexer(object):
         self._log.error("Illegal character '%s'" % t.value[0])
 
     def t_capital_error(self, t):
-        self._log.error("ROLE: Illegal character '%s'" % t.value[0])
+        self._log.error("CAPITAL: Illegal character '%s'" % t.value[0])
 
     def test(self, data):
         toks = []

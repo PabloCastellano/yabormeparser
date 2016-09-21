@@ -367,7 +367,7 @@ class Parser(object):
         rich_text = self._texts[self._index]
         self._index += 1
         self._log.debug("_get_announcement: %s", rich_text.text())
-        if type(rich_text) == Text:  # A label not Bold is a exception
+        if type(rich_text) == Text:  # A label not Bold is an exception
             label_aux, trail = self._parse_semicolon(rich_text.text())
             if trail:
                 self._log.error("TRAIL(Text): " + trail)

@@ -225,7 +225,7 @@ class Parser(object):
                         text = ""
                         is_first = True
             else:
-                err = "PDF element unknow in Line context %s" % type(line)
+                err = "PDF element unknown in Line context %s" % type(line)
                 raise ExceptionLayout(err)
         if is_complete_line_bold:
             assert type(reference_to_last_text) == act.BoldText

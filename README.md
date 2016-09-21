@@ -155,7 +155,7 @@ To contribute to YABORMEParser, clone this repo locally and commit your code on
 a separate branch.
 
 If you download the code and you don't install the package you can execute the
-scripts:
+scripts like:
 
 ```
 python -m yabormeparser.parser -i examples/BORME-A-2009-100-49.pdf
@@ -193,7 +193,7 @@ ERRORs 0
 Now the second parser:
 
 ```
-bin/parser_dir.sh tmp/
+bin/parser2_dir.sh tmp/
 rm -rf tmp
 ```
 
