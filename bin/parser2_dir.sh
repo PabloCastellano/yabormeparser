@@ -2,6 +2,7 @@
 source env/bin/activate
 DIRECTORY=$1
 aux=`mktemp`
+date_begin=`date`
 for json in `find $1 -name "*.RAW.json"`;
 do
     base=`echo $json| sed 's/RAW.json$//'`
@@ -14,6 +15,7 @@ do
     echo $script >> $aux
 done
 cat $aux | parallel -j 8
+date_end=`date`
 RAW=`find $DIRECTORY/ -name "*.RAW.json" | wc -l`
 JSON=`find $DIRECTORY/ -name "*.json" | grep -v RAW| wc -l`
 ERROR=`echo $RAW - $JSON | bc`
@@ -26,4 +28,8 @@ if [ $RAW = $JSON ]; then
 else
     echo 'FAIL! JSON files != RAW files'
 fi
+echo '------------------------'
+echo "TIME SPENT:"
+echo "  Start: $date_begin"
+echo "  End: $date_end"
 echo '------------------------'
