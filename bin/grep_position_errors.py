@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import json
 import sys
-import yabormeparser.annoucement.nombramientos as n
+import yabormeparser.announcement.nombramientos as n
 
 
 def is_unknown(position):

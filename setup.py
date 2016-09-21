@@ -24,7 +24,7 @@ version = yabormeparser.__version__
 setup(
     name='yabormeparser',
     version=version,
-    packages=['yabormeparser', 'yabormeparser.annoucement'],
+    packages=['yabormeparser', 'yabormeparser.announcement'],
     entry_points={
         'console_scripts': ['yabormeparser1 = yabormeparser.parser:main',
                             'yabormeparser2 = yabormeparser.parser2:main']},

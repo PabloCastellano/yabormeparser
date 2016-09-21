@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
-from yabormeparser.annoucement import nombramientos
+from yabormeparser.announcement import nombramientos
 
 
 # BORME-A-2009-100-49

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
-from yabormeparser.annoucement import ceses_dimisiones
+from yabormeparser.announcement import ceses_dimisiones
 
 
 class TestCesesDimisiones(unittest.TestCase):

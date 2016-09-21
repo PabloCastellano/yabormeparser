@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import sys
-import yabormeparser.annoucement.nombramientos as nomb
-import yabormeparser.annoucement.common as common
+import yabormeparser.announcement.nombramientos as nomb
+import yabormeparser.announcement.common as common
 
 if len(sys.argv) == 2:
     file_ = sys.argv[1]

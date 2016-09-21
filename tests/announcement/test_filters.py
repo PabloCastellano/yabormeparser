@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import unittest
-import yabormeparser.annoucement.filters as filters
+import yabormeparser.announcement.filters as filters
 
 
 class TestPtasEuros(unittest.TestCase):

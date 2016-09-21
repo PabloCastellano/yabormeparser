@@ -44,20 +44,20 @@ class TestFileExampleA(unittest.TestCase):
                            'R.M. SANTIAGO DE COMPOSTELA')
 
     def test_borme_act_labels(self):
-        self._assert_annoucement_label(0, 0, 0, u'Ceses/Dimisiones')
-        self._assert_annoucement_label(0, 8, 1, u'Nombramientos')
-        self._assert_annoucement_label(1, 0, 3, u'Cambio de domicilio social')
-        self._assert_annoucement_label(1, 1, 0, u'Constitución')
+        self._assert_announcement_label(0, 0, 0, u'Ceses/Dimisiones')
+        self._assert_announcement_label(0, 8, 1, u'Nombramientos')
+        self._assert_announcement_label(1, 0, 3, u'Cambio de domicilio social')
+        self._assert_announcement_label(1, 1, 0, u'Constitución')
 
     def test_borme_act_values(self):
-        self._assert_annoucement_value(0, 0, 0, u'Adm. Unico: TAP OBRA CIVIL' +
+        self._assert_announcement_value(0, 0, 0, u'Adm. Unico: TAP OBRA CIVIL' +
                                        u' Y EDIFICACION SOCIEDAD LIMITADA.')
-        self._assert_annoucement_value(0, 8, 1, 'Adm. Solid.: COUCHEIRO ' +
+        self._assert_announcement_value(0, 8, 1, 'Adm. Solid.: COUCHEIRO ' +
                                        'FAILDE JOSE ANTONIO;EXPOSITO ' +
                                        'ALCOCER JOSE.')
-        self._assert_annoucement_value(1, 0, 3, 'C/ DE LAS CANCELAS 125 ' +
+        self._assert_announcement_value(1, 0, 3, 'C/ DE LAS CANCELAS 125 ' +
                                        '(SANTIAGO DE COMPOSTELA).')
-        self._assert_annoucement_value(1, 1, 3, u'T 211 , F 146, S 8, H SC ' +
+        self._assert_announcement_value(1, 1, 3, u'T 211 , F 146, S 8, H SC ' +
                                        u'46962, I/A 1 ( 5.12.13).')
 
     def test_json_file_save(self):
@@ -70,23 +70,23 @@ class TestFileExampleA(unittest.TestCase):
         json_file.close()
         self.assertEqual(self.doc, other.document)
 
-    def test_file_without_annoucements_2013(self):
+    def test_file_without_announcements_2013(self):
         json_file = open('examples/BORME-A-2013-238-15.RAW.json', "r")
         other = parser.Parser()
         other.load_json(json_file)
         json_file.close()
-        self.assertEqual(self._delete_annoucements(self.doc),
-                         self._delete_annoucements(other.document))
+        self.assertEqual(self._delete_announcements(self.doc),
+                         self._delete_announcements(other.document))
 
-    def test_file_with_annoucement_labels_2013(self):
+    def test_file_with_announcement_labels_2013(self):
         json_file = open('examples/BORME-A-2013-238-15.RAW.json', "r")
         other = parser.Parser()
         other.load_json(json_file)
         json_file.close()
-        self.assertEqual(self._delete_annoucements_but_labels(self.doc),
-                         self._delete_annoucements_but_labels(other.document))
+        self.assertEqual(self._delete_announcements_but_labels(self.doc),
+                         self._delete_announcements_but_labels(other.document))
 
-    def test_file_with_annoucement_2013(self):
+    def test_file_with_announcement_2013(self):
         json_file = open('examples/BORME-A-2013-238-15.RAW.json', "r")
         other = parser.Parser()
         other.load_json(json_file)
@@ -99,26 +99,26 @@ class TestFileExampleA(unittest.TestCase):
         self.assertEqual(act['company'], company)
         self.assertEqual(act['register'], register)
 
-    def _assert_annoucement_label(self, page_num, act_num, ann_num, label):
+    def _assert_announcement_label(self, page_num, act_num, ann_num, label):
         act = self.doc['pages'][page_num][act_num]
-        ann = act['annoucements'][ann_num]
+        ann = act['announcements'][ann_num]
         self.assertEqual(ann['label'], label)
 
-    def _assert_annoucement_value(self, page_num, act_num, ann_num, value):
+    def _assert_announcement_value(self, page_num, act_num, ann_num, value):
         act = self.doc['pages'][page_num][act_num]
-        ann = act['annoucements'][ann_num]
+        ann = act['announcements'][ann_num]
         self.assertEqual(ann['value'], value)
 
-    def _delete_annoucements(self, doc):
+    def _delete_announcements(self, doc):
         for page in doc["pages"]:
             for act in page:
-                act["annoucements"] = []
+                act["announcements"] = []
         return doc
 
-    def _delete_annoucements_but_labels(self, doc):
+    def _delete_announcements_but_labels(self, doc):
         for page in doc["pages"]:
             for act in page:
-                for ann in act["annoucements"]:
+                for ann in act["announcements"]:
                     trash = []
                     for key in ann:
                         if not key == "label":

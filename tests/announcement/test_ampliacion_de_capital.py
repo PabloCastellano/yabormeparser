@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
-from yabormeparser.annoucement import ampliacion_de_capital
+from yabormeparser.announcement import ampliacion_de_capital
 
 
 # BORME-A-2009-101-28

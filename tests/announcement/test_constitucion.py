@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
-import yabormeparser.annoucement.constitucion as constitucion
+import yabormeparser.announcement.constitucion as constitucion
 
 class TestConstitucion(unittest.TestCase):
 

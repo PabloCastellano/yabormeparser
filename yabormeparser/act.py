@@ -58,7 +58,7 @@ class Parser(object):
     """Reads a list of objects and returns a JSON"""
     def __init__(self, texts, patched_acts):
         self._log = logging.getLogger(__name__)
-        self.annoucement_types = {
+        self.announcement_types = {
             u"Revocaciones": self._get_simple,
             u"Reelecciones": self._get_simple,
             u"Nombramientos": self._get_simple,
@@ -133,7 +133,7 @@ class Parser(object):
             self._log.error("Instanced parser void")
             return
         self._index = 0
-        self.annoucements = []
+        self.announcements = []
         self._texts = texts
         self.code = "UNKNOWN"
         self._clean_special_spaces()
@@ -150,17 +150,17 @@ class Parser(object):
         self._texts = self._get_texts_without_new_lines(texts_wo_emb)
         self._index = 0
         # if code in ["247808"]:
-        #    return get_annoucements_ --> indicate it is manual filling.
+        #    return get_announcements_ --> indicate it is manual filling.
         if patched_acts and code in patched_acts:
             self._log.info("Patched act: %s" % code)
             act = patched_acts[code]
-            self.annoucements = act["annoucements"]
+            self.announcements = act["announcements"]
             self.branch = act["branch"]
             assert self.code == act["code"]
             self.company = act["company"]
             self.register = act["register"]
         else:
-            self._get_annoucements()
+            self._get_announcements()
 
     def _clean_special_spaces(self):
         while type(self._texts[self._index]) == SpecialSpace:
@@ -207,7 +207,7 @@ class Parser(object):
         res = pattern.search(text)
         if res:
             label = self._space_uniq(res.group(1).strip())
-            if label in self.annoucement_types:
+            if label in self.announcement_types:
                 return False
         return True
 
@@ -359,14 +359,14 @@ class Parser(object):
             value = unicode(res.group(2))
         return label, value
 
-    def _get_annoucement(self):
+    def _get_announcement(self):
         # Get Label
         label = u''
         value = u''
         label_aux = u''
         rich_text = self._texts[self._index]
         self._index += 1
-        self._log.debug("_get_annoucement: %s", rich_text.text())
+        self._log.debug("_get_announcement: %s", rich_text.text())
         if type(rich_text) == Text:  # A label not Bold is a exception
             label_aux, trail = self._parse_semicolon(rich_text.text())
             if trail:
@@ -386,23 +386,23 @@ class Parser(object):
                         self._texts[self._index] = BoldText(trail)
                 else:
                     self._log.error("NO REGEXP MATCH: %s" % text)
-        if label_aux in self.annoucement_types:
+        if label_aux in self.announcement_types:
             label = label_aux
-            value = self.annoucement_types[label]()
+            value = self.announcement_types[label]()
         else:
             message = "UNKNOWN LABEL: %s" % rich_text.text()
             raise ExceptionAct(message, self.code,
                                self.branch, self.company, self.register)
         if value is not None:
             value = value.strip()
-        self.annoucements.append({u'label': label, u'value': value})
+        self.announcements.append({u'label': label, u'value': value})
 
     def _space_uniq(self, text):
         return " ".join([i for i in text.split(" ") if i != ""])
 
-    def _get_annoucements(self):
+    def _get_announcements(self):
         while self._index < len(self._texts):
-            self._get_annoucement()
+            self._get_announcement()
 
     def get_str(self):
         result = "Code: %s\n" % self.code
@@ -410,26 +410,26 @@ class Parser(object):
         result += "Branch: %s\n" % self.branch
         result += "Register: %s\n" % self.register
         result += "Annoucements:\n"
-        for a in self.annoucements:
+        for a in self.announcements:
             result += str(a) + "\n"
         return result
 
     def get_act(self):
         return self._get_act(self.code, self.company, self.branch,
-                             self.register, self.annoucements)
+                             self.register, self.announcements)
 
     def get_empty_act(self):
-        annoucements = [{"label": "", "value": ""}, {"label": "", "value": ""}]
-        return self._get_act("", "", "", "", annoucements)
+        announcements = [{"label": "", "value": ""}, {"label": "", "value": ""}]
+        return self._get_act("", "", "", "", announcements)
 
     def _get_act(self, code, company, branch, register,
-                 annoucements):
+                 announcements):
         return {
             u'code': code,
             u'company': company,
             u'branch': branch,
             u'register': register,
-            u'annoucements': annoucements
+            u'announcements': announcements
         }
 
     def _get_null(self):
@@ -463,7 +463,7 @@ class Parser(object):
                 test_key = parts[i].strip()
                 if test_key[-1] == ":":
                     test_key = test_key[:-1]
-                if test_key in self.annoucement_types or is_trailed:
+                if test_key in self.announcement_types or is_trailed:
                     is_trailed = True
                     trailed_text += parts[i]
                     if i < len(parts) - 1:

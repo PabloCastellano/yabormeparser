@@ -309,9 +309,9 @@ class Parser(object):
                     # expression = ur'^(\d+) - .+$'. This occurs only in
                     # companies with branchs (sucursales) like banks.
                     assert not last_page_act['branch']
-                    assert not last_page_act['annoucements']
+                    assert not last_page_act['announcements']
                     last_page_act['branch'] = act_info['company']
-                    last_page_act['annoucements'] = act_info['annoucements']
+                    last_page_act['announcements'] = act_info['announcements']
 
                 else:
                     acts.append(act_info)

@@ -7,7 +7,7 @@ import constitucion
 import nombramientos
 import common
 
-_annoucements = {
+_announcements = {
     u"Ampliación de capital": ampliacion_de_capital,
     u"Ceses/Dimisiones": ceses_dimisiones,
     u"Constitución": constitucion,
@@ -16,12 +16,12 @@ _annoucements = {
 
 
 def process(label, value):
-    annoucement = None
+    announcement = None
     try:
-        if label in _annoucements:
-            module = _annoucements[label]
+        if label in _announcements:
+            module = _announcements[label]
             ann = module.Parser(value)
-            annoucement = ann.to_dict()
+            announcement = ann.to_dict()
     except ply.lex.LexError as e:
         raise common.ParserException(e)
-    return annoucement
+    return announcement

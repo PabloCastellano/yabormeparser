@@ -6,7 +6,7 @@ import os.path
 import parser
 import logging
 from . import loggingopt
-from . import annoucement
+from . import announcement
 
 
 RAW_FILE_VERSION = parser.RAW_FILE_VERSION
@@ -29,7 +29,7 @@ class Parser2(object):
         self.raw_file = raw_file
         self.output_dir = output_dir or os.path.dirname(raw_file)
         self.doc = None
-        self.error_annoucements = []
+        self.error_announcements = []
 
         p = parser.Parser()
         fp = open(raw_file, "rb")
@@ -39,7 +39,7 @@ class Parser2(object):
             patch = self.load_json_patch(patch_file)
             doc = self._patch(doc, patch)
         doc = self._version(doc)
-        doc = self._annoucements(doc)
+        doc = self._announcements(doc)
         doc = self._date(doc)
         doc = self._delete_toc(doc)
         self.document = doc
@@ -49,7 +49,7 @@ class Parser2(object):
         base = basename[:-len(".RAW.json")]
         base = os.path.join(self.output_dir, base)
         result = ""
-        if self.error_annoucements:
+        if self.error_announcements:
             patch_file = self._get_file(base + ".patch.TMP")
             self.save_skeleton(patch_file)
             result = patch_file.name
@@ -68,7 +68,7 @@ class Parser2(object):
         return open(name, "w+")
 
     def save_skeleton(self, fp):
-        self._save_json(fp, self.error_annoucements)
+        self._save_json(fp, self.error_announcements)
 
     def save_result(self, fp):
         self._save_json(fp, self.document)
@@ -89,7 +89,7 @@ class Parser2(object):
             correction = patch.pop()
         for p in doc["pages"]:
             for act in p:
-                for ann in act["annoucements"]:
+                for ann in act["announcements"]:
                     if ((correction and
                          act["code"] == correction["code"] and
                          ann["label"] == correction["label"])):
@@ -99,18 +99,18 @@ class Parser2(object):
                             correction = patch.pop()
         return doc
 
-    def _annoucements(self, doc):
+    def _announcements(self, doc):
         for p in doc["pages"]:
             for ac in p:
-                for an in ac["annoucements"]:
+                for an in ac["announcements"]:
                     try:
-                        d = annoucement.parser.process(an["label"],
+                        d = announcement.parser.process(an["label"],
                                                        an["value"])
                         if d:
                             an.pop("value")
                             for k in d:
                                 an[k] = d[k]
-                    except annoucement.common.ParserException as e:
+                    except announcement.common.ParserException as e:
                         error = {
                             "label": an["label"],
                             "value": an["value"],
@@ -118,7 +118,7 @@ class Parser2(object):
                             "code": ac["code"]
                         }
                         self._log.error("Annoucement parser. " + str(error))
-                        self.error_annoucements.append(error)
+                        self.error_announcements.append(error)
         return doc
 
     def _version(self, doc):
