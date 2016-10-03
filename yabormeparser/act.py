@@ -253,7 +253,8 @@ class Parser(object):
             else:
                 title += " " + line
         # 532404 - SIGUEME, GESTION SL(R.M. SANTIAGO DE COMPOSTELA).
-        expression = ur'^(\d+) - (.*)\((.*)\)\.$'
+        title = title.rstrip(".")
+        expression = ur'^(\d+) - (.*)\((.*)\)$'
         res = re.search(expression, title)
         if res:
             code = res.group(1)
