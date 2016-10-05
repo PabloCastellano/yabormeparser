@@ -97,6 +97,8 @@ class Parser(object):
             u"Escisión total": self._get_bold_and_simple,
             u"Desembolso de dividendos pasivos": self._get_simple,
             u"Página web de la sociedad": self._get_simple,
+            u"Anotación preventiva. Demanda de impugnación de acuerdos sociales": self._get_simple,
+            u"Anotación preventiva. Declaración de deudor fallido": self._get_simple,
             u"Articulo 378.5 del Reglamento del Registro Mercantil":
             self._get_simple,
             u"Cesión global de activo y pasivo": self._get_simple,
