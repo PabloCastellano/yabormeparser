@@ -155,7 +155,7 @@ class Parser2(object):
         assert cve == doc['cve']
         doc['num'] = int(re.match(u'^BORME (\d+) de \d+', numero_text, re.UNICODE).group(1))
         doc['provincia'] = provincia
-        doc['seccion'] = "TODO"
+        #doc['seccion'] = ""  # TODO
 
         try:
             doc['publish_date'] = datetime.datetime.strptime(pub_date, '%d/%m/%Y').date().isoformat()
