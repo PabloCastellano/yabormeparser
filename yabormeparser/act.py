@@ -4,7 +4,8 @@
 import re
 import logging
 
-COMPLETE_LINE_MIN_LENGTH = 537.1
+# UNUSED
+#COMPLETE_LINE_MIN_LENGTH = 537.1
 
 
 class ExceptionAct(Exception):
@@ -450,6 +451,8 @@ class Parser(object):
             self._index -= 1
 
     def _get_bold(self):
+        # Declaración de unipersonalidad.
+        # text = "Socio único: FERRERAS ANDRES MARIA CARMEN. Nombramientos. "
         rich_text = self._texts[self._index]
         assert type(rich_text) == BoldText
         text = rich_text.text()

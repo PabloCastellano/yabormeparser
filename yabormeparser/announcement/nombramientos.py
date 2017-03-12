@@ -118,6 +118,8 @@ class Parser(object):
             self._add_role()
 
     def _add_role(self):
+        """ Adds a new parsed role (role, name) to the internal list """
+        """ It gets called when a separator or role is found and name is present """
         rolekey = self._rolekey()
         role = position[rolekey]
         name = self.name.strip().strip('.')
@@ -125,14 +127,17 @@ class Parser(object):
         self.name = ""
 
     def _rolekey(self):
+        """ Returns role name used as key """
         rolekey = self.role[:-1].upper()
         rolekey = rolekey.replace('V- ', 'V-')
         return rolekey
 
     def to_dict(self):
+        """ Returns dict of roles """
         return {"roles": self.roles}
 
     def to_str(self):
+        """ Returns all roles in one string"""
         result = ""
         for role in self.roles:
             result += role[0] + "\t" + role[1] + "\n"
