@@ -97,6 +97,8 @@ class Parser(object):
             u"Escisión total": self._get_bold_and_simple,
             u"Desembolso de dividendos pasivos": self._get_simple,
             u"Página web de la sociedad": self._get_simple,
+            u"Anotación preventiva. Demanda de impugnación de acuerdos sociales": self._get_simple,
+            u"Anotación preventiva. Declaración de deudor fallido": self._get_simple,
             u"Articulo 378.5 del Reglamento del Registro Mercantil":
             self._get_simple,
             u"Cesión global de activo y pasivo": self._get_simple,
@@ -253,7 +255,8 @@ class Parser(object):
             else:
                 title += " " + line
         # 532404 - SIGUEME, GESTION SL(R.M. SANTIAGO DE COMPOSTELA).
-        expression = ur'^(\d+) - (.*)\((.*)\)\.$'
+        title = title.rstrip(".")
+        expression = ur'^(\d+) - (.*)\((.*)\)$'
         res = re.search(expression, title)
         if res:
             code = res.group(1)

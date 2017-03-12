@@ -55,6 +55,7 @@ class Parser(object):
                 u'raw_version': RAW_FILE_VERSION,
                 u'title': u(info['Title']),
                 u'subject': u(info['Subject']),
+                u'keywords': u(info['Keywords']),
                 u'creation_date': u(info['CreationDate']),
                 u'mod_date': u(info['ModDate']),
                 u'toc': self._get_toc(doc),
@@ -72,8 +73,8 @@ class Parser(object):
     def save_skeleton(self, fp):
         skl = {}
         act_ = act.Parser("", [])
-        company_skl = act_.get_empty_act()
         for error in self.error_acts:
+            company_skl = act_.get_empty_act()
             skl[error["code"]] = company_skl
             company_skl["error"] = error["message"]
             company_skl["code"] = error["code"]
