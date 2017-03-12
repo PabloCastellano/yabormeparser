@@ -236,6 +236,7 @@ class Parser(object):
         return box
 
     def _parse_act(self, box_horizontal, is_embedded_act=False):
+        """ Given box_horizontal, returns a parsed act object """
         # txt = box_horizontal.get_text()
         parts = []
         # self._log.debug("%s [...] %s" % (txt[:20], txt[-18:]))
@@ -250,6 +251,7 @@ class Parser(object):
         return act_
 
     def _is_a_complete_act(self, box_horizontal):
+        """ Check if act is splitted in two pages or if it's complete """
         is_a_complete_act = False
         try:
             self._parse_act(box_horizontal)

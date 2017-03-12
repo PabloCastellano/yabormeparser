@@ -169,8 +169,11 @@ class Parser(object):
         while type(self._texts[self._index]) == SpecialSpace:
             self._index += 1
 
+    # UNUSED
+    """
     def get_json(self):
         return self.company
+    """
 
     def _is_title(self, index):
         rich_text = self._texts[index]
@@ -402,6 +405,7 @@ class Parser(object):
         self.announcements.append({u'label': label, u'value': value})
 
     def _space_uniq(self, text):
+        """ Removes repeated spaces """
         return " ".join([i for i in text.split(" ") if i != ""])
 
     def _get_announcements(self):
