@@ -14,7 +14,7 @@ RAW_FILE_VERSION = parser.RAW_FILE_VERSION
 # parser (parser2)
 TH_FILE_VERSION = u"7"
 # The file version depends on parser one and parser two. It is coded to avoid
-# that the parser I changes and the parser II does not.
+# that the parser one changes and the parser two does not.
 FILE_VERSION = u"%i" % (int(RAW_FILE_VERSION) + 1000 * int(TH_FILE_VERSION))
 
 
