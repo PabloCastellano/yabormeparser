@@ -14,7 +14,7 @@ from . import announcement
 RAW_FILE_VERSION = parser.RAW_FILE_VERSION
 # Thousands file version. Represent the file version part corresponding to this
 # parser (parser2)
-TH_FILE_VERSION = u"7"
+TH_FILE_VERSION = u"8"
 # The file version depends on parser one and parser two. It is coded to avoid
 # that the parser one changes and the parser two does not.
 FILE_VERSION = u"%i" % (int(RAW_FILE_VERSION) + 1000 * int(TH_FILE_VERSION))
