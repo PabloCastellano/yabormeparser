@@ -1,23 +1,28 @@
 #!/bin/bash
-source env/bin/activate
-DIRECTORY=$1
+source ~/.virtualenvs/yabormeparser/bin/activate
+DIRECTORY_IN=$1
+DIRECTORY_OUT=$2
 aux=`mktemp`
 date_begin=`date`
-for pdf in `find $1 -name "*.pdf"`;
+
+mkdir -p $DIRECTORY_OUT
+
+for pdf in `find $DIRECTORY_IN -name "*.pdf"`;
 do
     base=`echo $pdf| sed 's/pdf$//'`
     patch=$base"RAW.patch"
-    script="python -m yabormeparser.parser -i "$pdf
+    script="python -m yabormeparser.parser -i $pdf -o $DIRECTORY_OUT"
     if [ -f $patch ];
     then
         script="$script -p $patch"
     fi
     echo $script >> $aux
 done
+date_begin2=`date`
 cat $aux | parallel -j 8
 date_end=`date`
-PDF=`find $DIRECTORY/ -name "*.pdf" | wc -l`
-JSON=`find $DIRECTORY/ -name "*.RAW.json" | wc -l`
+PDF=`find $DIRECTORY_IN/ -name "*.pdf" | wc -l`
+JSON=`find $DIRECTORY_OUT/ -name "*.RAW.json" | wc -l`
 ERROR=`echo $PDF - $JSON | bc`
 echo PDFs $PDF
 echo JSONs $JSON
@@ -31,5 +36,6 @@ fi
 echo '------------------------'
 echo "TIME SPENT:"
 echo "  Start: $date_begin"
+echo "  Parsing start: $date_begin2"
 echo "  End: $date_end"
 echo '------------------------'
