@@ -28,12 +28,17 @@ YaBORMEParser requires the following to run:
 
 * Python 2.7+
 * pdfminer 20140328+
-* ply 3.8+
+* ply 3.9+
 
 To build the PIP package it is required:
 
 * PyPandoc 1.1.3+
 
+To use the example scripts:
+
+```
+apt install parallel bc
+```
 
 # Usage
 
@@ -220,3 +225,17 @@ BORMEMining:
 
 The database and JSON files of BORMEMining are used for BORMEMiningWeb to give
 a Web interface and a REST API.
+
+# Known issues
+
+yabormeparser1 can consume more memory than expected so make sure you have at least 1GB RAM or a SWAP partition:
+
+E.g.:
+
+```
+yabormeparser1 -i pdf/2017/03/01/BORME-A-2017-42-08.pdf
+```
+
+has 67 pages and uses 350MB+ RAM.
+
+
