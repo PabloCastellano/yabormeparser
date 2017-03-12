@@ -5,7 +5,7 @@ import re
 
 def _convert(match):
     ptas = int(match.group(1).replace('.', ''))
-    euros = str(round(ptas / 166.39, 2)).replace('.', ',')
+    euros = str(round(ptas / 166.386, 2)).replace('.', ',')
     return euros + " Euros."
 
 
