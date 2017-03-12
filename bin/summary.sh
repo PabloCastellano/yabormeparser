@@ -1,3 +1,6 @@
+#!/bin/bash
+set -u
+
 DIR=$1
 echo "Files"
 echo "-----"

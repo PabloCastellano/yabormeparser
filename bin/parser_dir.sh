@@ -1,4 +1,6 @@
 #!/bin/bash
+set -u
+
 source ~/.virtualenvs/yabormeparser/bin/activate
 DIRECTORY_IN=$1
 DIRECTORY_OUT=$2
